@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centralizando a Logo */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4A90E2;
+    font-weight: bold;
+}
+
+/* Faz a foto e o texto ocuparem melhor o espaço */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Empurra os elementos para as extremidades */
+    padding: 60px 8%; /* Aumenta o respiro lateral */
+    flex-wrap: wrap; 
+}
+
+/* --- SEÇÃO DA FOTO E DO BALÃO (SUBSTITUIR) --- */
+
+/* 1. Container que segura a foto e o balão */
+.hero-image {
+    position: relative; 
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+/* 2. O balão (Badge) com o nome e CREFITO */
+.badge-especialista {
+    position: absolute;
+    bottom: 30px;       /* Distância do fundo da foto */
+    right: -20px;       /* Faz o balão sair um pouco para fora da foto */
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    border-left: 5px solid #4A90E2; 
+    
+    /* Suaviza a subida do balão */
+    transition: all 0.5s ease; 
+}
+
+/* 3. A foto do Dr. Deivid */
+.foto-principal {
+    border-radius: 20px;
+    display: block;
+    width: 100%;
+    max-width: 450px; /* Ajuste conforme o tamanho da sua imagem */
+    transition: transform 0.5s ease;
+}
+
+/* Estilo do Nome do Especialista */
+.nome-especialista {
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: -40px; /* Faz o nome "subir" um pouco sobre a foto */
+    margin-right: 20px;
+    z-index: 5;
+    border-left: 5px solid #4A90E2; /* Detalhe azul para combinar com a logo */
+}
+
+.nome-especialista h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.nome-especialista p {
+    color: #4A90E2;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 25px;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+    
+    /* A MÁGICA ESTÁ AQUI: a transição faz o efeito ser suave */
+    transition: all 0.5s ease; 
+}
+
+/* O efeito de passar o mouse (Hover) */
+.btn-whatsapp:hover {
+    transform: scale(1.1); /* Faz o botão crescer 10% */
+    background-color: #1ebe57; /* Muda o verde para um tom levemente diferente */
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); /* Aumenta a sombra ao subir */
+}
+/* Efeito na foto do Dr. Deivid */
+.foto-principal {
+    transition: transform 0.7s ease;
+}
+
+.foto-principal:hover {
+    transform: translateY(-10px); /* A foto sobe levemente quando passa o mouse */
+}
+
+/* Efeito na Logo da Clínica Afeto */
+.logo {
+    width: 100%;
+    max-width: 450px; /* Esse tamanho garante que ela não fique pequena no Edge */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Garante que ela fique centralizada no topo */
+}
+
+
+.logo:hover {
+    opacity: 0.8; /* A logo fica levemente transparente ao tocar, dando feedback de clique */
+}
+
+
+/* Organização dos botões em grupo */
+.cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.sub-btns {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo para os botões secundários (Orçamento/Dúvida) */
+.btn-whatsapp.alt {
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 0.9rem;
+    padding: 12px 20px;
+}
+
+/* Estilo para as novas seções de texto */
+.section-container {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.light-bg {
+    background-color: #f8fbff;
+}
+ /* --- EFEITOS DE MOVIMENTO (ADICIONAR NO FINAL) --- */
+
+/* Quando o mouse entra na área da imagem, o balão sobe */
+
+
+/* Leve zoom na foto quando o mouse passa */
+.hero-image:hover .foto-principal {
+    transform: scale(1.02);
+}
+
+/* Efeito de Fundo na Seção Ambiente */
+.ambiente-parallax {
+    background-image: url('caminho-da-sua-foto-da-clinica.jpg'); /* COLOQUE UMA FOTO DA RECEPÇÃO AQUI */
+    background-attachment: scroll;/* Efeito Parallax - a foto fica parada ao rolar */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.overlay-suave {
+    background: rgba(44, 62, 80, 0.8); /* Camada azul escura transparente sobre a foto */
+    padding: 100px 10%;
+}
+
+/* Estilo da Equipe */
+.equipe {
+    background-color: #ffffff;
+}
+
+.equipe-card {
+    background: #f8fbff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: 5px solid #4A90E2;
+}
+
+.subtitle {
+    color: #4A90E2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Espaçamento entre seções */
+.section-container {
+    padding: 100px 10%;
+}
+
+/* Isso vai criar um contraste entre o topo do site e o conteúdo */
+#sobre {
+    background-color: #f8fbff; /* Um azul quase branco, bem clínico */
+    padding: 80px 10%;
+    margin-top: 40px;
+}
+
+#ambiente {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Fundo escuro para dar contraste */
+    color: white;
+    padding: 80px 10%;
+    border-radius: 50px 50px 0 0; /* Mantendo as pontas arredondadas que você tinha */
+    text-align: center;
+}
+
+.local-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Efeito de vidro */
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.local-card h3, .local-card p {
+    color: white !important; /* Garante que o endereço apareça */
+}
+
+.whatsapp-fixo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-fixo:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-fixo img {
+    width: 100%;
+}
+
+#sobre {
+    background-color: #f0f7ff; /* Um azul bem clarinho para destacar o card */
+    padding: 100px 0;
+    margin: 50px 0;
+}
+
+.equipe-card {
+    background: white;
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05); /* Sombra suave para "saltar" da tela */
+    border-bottom: 6px solid #4A90E2;
+}
+
+.page-wrapper {
+    background-color: white;
+    border-radius: 45px; /* A borda de app */
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    width: 100%;
+}
+
+.nav-insta {
+    color: #E1306C !important; /* Cor do Instagram para destaque */
+    font-weight: bold;
+}
+
+.btn-mapa {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #f39c12; /* Laranja que combina com a logo */
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-mapa:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
